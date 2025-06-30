@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp
+spec:
+  containers:
+  - name: web
+    image: 674412902991.dkr.ecr.us-east-1.amazonaws.com/webapp:latest
+
