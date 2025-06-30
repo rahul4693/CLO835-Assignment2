@@ -12,6 +12,13 @@ spec:
       labels:
         app: mysql
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: mysql
-          image: mysql
+          image: 674412902991.dkr.ecr.us-east-1.amazonaws.com/mysql:latest
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "password"

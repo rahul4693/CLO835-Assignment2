@@ -12,6 +12,19 @@ spec:
       labels:
         app: employees
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: webapp
-          image: nginx
+          image: 674412902991.dkr.ecr.us-east-1.amazonaws.com/webapp:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DBHOST
+              value: "mysql"
+            - name: DBUSER
+              value: "root"
+            - name: DBPWD
+              value: "password"
+            - name: DBPORT
+              value: "3306"
